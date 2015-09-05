@@ -1,0 +1,26 @@
+- model_class = @menu.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @menu.title
+%p
+  %strong= model_class.human_attribute_name(:path) + ':'
+  %br
+  = @menu.path
+%p
+  %strong= model_class.human_attribute_name(:side) + ':'
+  %br
+  = @menu.side
+%p
+  %strong= model_class.human_attribute_name(:top) + ':'
+  %br
+  = @menu.top
+
+- if current_user && current_user.admin
+  .form-actions
+    
+    = link_to t('.edit', :default => t("helpers.links.edit")), edit_menu_path(@menu), :class => 'btn'
+    = link_to t('.destroy', :default => t("helpers.links.destroy")), menu_path(@menu), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

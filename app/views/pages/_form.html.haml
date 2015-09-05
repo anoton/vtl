@@ -1,0 +1,12 @@
+= simple_form_for @page, :html => { :class => 'well form-horizontal' } do |f|
+  = f.input :title
+  = f.input :browser_title 
+  = f.input :main
+  = f.input :keywords
+  = f.input :meta_description
+  = f.input :body,  :input_html=>{:class => "ckeditor" , :rows=>"10"  }
+  = f.input :path, :as => :hidden
+  - if current_user && current_user.admin
+    .form-actions
+      = f.button :submit, :class => 'btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), pages_path, :class => 'btn'

@@ -1,0 +1,50 @@
+.account_show
+  = gravatar_image_tag(@account.user.email  , :gravatar=>{:size=>150}, :class=>"avatar" )
+  %fieldset
+    %h2
+      =@account.name
+    %br
+    %ul
+      -unless @account.birthdate.blank?
+        %li
+          %label=t('.birthdate')
+          %span=I18n.l(@account.birthdate, :format => :long)
+
+      -unless @account.city.blank?  
+        %li
+          %label=t('.city')
+          %span=@account.city 
+
+      -unless @account.phone.blank?
+        %li
+          %label=t('.phone')
+          %span=@account.phone
+
+      -unless @account.website.blank?    
+        %li
+          %label=t('.website')
+          %span=@account.website
+
+      -unless @account.description.blank?    
+        %li
+          %label=t('.description')
+          %span.description=@account.description
+      %hr
+      -unless @account.can_options.blank?
+        %li
+          %label=t('.can options')
+          %ul.options
+            - @account.can_options.each do |can_option|
+              %li
+                %span=can_option.name
+      %hr
+      -unless @account.want_options.blank?  
+        %li
+          %label=t('.want options')
+          %ul.options
+            - @account.want_options.each do |want_option|
+              %li
+                %span=want_option.name
+- if current_user && current_user.admin
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_account_path(@account), :class => 'btn btn-mini'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), account_path(@account), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'

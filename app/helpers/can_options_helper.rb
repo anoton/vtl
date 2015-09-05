@@ -1,0 +1,2 @@
+module CanOptionsHelper
+end

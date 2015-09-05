@@ -1,0 +1,58 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  application:
+    user_bar:
+      login: Login
+      logout: Logout
+      edit account: My Account
+      sign up: Sign Up
+       
+  layouts:
+    application:
+      edit profile: Edit Profile
+      show profile: Show Profile
+      can options: Can Options
+      want options: Want Options
+      pages: Pages
+      members: Members 
+  accounts:
+    edit:
+      edit_account: Edit Account
+      update: Update
+      change_avatar: Change your avatar at Gravatar.com.
+    show:
+      birthdate: Birthdate
+      city: City
+      phone: Phone
+      website: Website
+      description: Descriprion
+      can options: Can Options
+      want options: Want Options 
+  can_options:    
+    form:
+      submit: Update
+    edit:
+      title: Edit Can Option
+    index:
+      title: Can Options
+    show:
+      title: Can Option
+  want_options:    
+    form:
+      submit: Update
+    edit:
+      title: Edit Want Option
+    index:
+      title: Want Options
+    show:
+      title: Want Option    
+  helpers:
+    links:
+      cancel: Cancel 
+      new: New
+      edit: Edit
+      destroy: Destroy
+      confirm: Are you sure?
+      back: Back

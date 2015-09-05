@@ -1,0 +1,28 @@
+= simple_form_for(@account, :html => { :method => :put , :class=>"well form-horizontal account-form"  }) do |f|
+  .pull-right
+    = gravatar_image_tag(@account.user.email  , :class=>"avatar" )
+    %br
+    = link_to t(".change_avatar"), "http://www.gravatar.com"
+  = f.error_notification
+  %fieldset
+    %h2
+      =t(".edit_account") 
+    = f.input :name 
+    = f.input :birthdate, :as=>:string, :input_html=>{:class=>"small", :id=>'datepicker'  }
+    = f.input :city
+    = f.input :phone
+    = f.input :website
+    = f.input :description, :input_html=>{:class=>'textarea' , :rows=>"10"  }
+    = f.association :can_options, :as=>:check_boxes
+    = f.association :want_options, :as=>:check_boxes
+    /= f.input :content_type, :collection => content_type_options, :as => :check_boxes  
+  .form-actions
+    = f.button :submit, t(".update") , :class=>"btn btn-success"
+%h3=t(".cancel_my_account")
+%p
+  =t(".unhappy?") 
+= link_to t(".Cancel_my_account"), user_registration_path, :confirm => 'Are you sure you want to destroy your account?', :method => :delete 
+/= link_to t(".Back"), :back
+
+
+

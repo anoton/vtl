@@ -1,0 +1,13 @@
+- content_for :site_title do 
+  =@page.browser_title
+
+- model_class = @page.class
+.page-header
+  -if !@page.main
+    %h1= @page.title
+  %p
+  = raw @page.body
+-if current_user && current_user.admin
+  .form-actions
+    = link_to t('.edit', :default => t("helpers.links.edit")), edit_page_path(@page), :class => 'btn'
+    = link_to t('.destroy', :default => t("helpers.links.destroy")), page_path(@page), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

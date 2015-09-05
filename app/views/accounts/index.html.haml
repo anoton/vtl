@@ -1,0 +1,10 @@
+- @users.each do |user|
+  -unless user.account.name.blank?
+    .well.account_index
+      = link_to(gravatar_image_tag(user.email  , :gravatar=>{:size=>100}, :class=>"avatar" ), account_path(user.account))
+      %fieldset
+        %h4
+          = link_to(user.account.name, account_path(user.account))
+      
+
+.my_pagination= paginate @users

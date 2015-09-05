@@ -1,0 +1,6 @@
+= simple_form_for @want_option, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  - if current_user && current_user.admin
+    .form-actions
+      = f.button :submit, :class => 'btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), want_options_path, :class => 'btn'

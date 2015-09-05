@@ -1,0 +1,111 @@
+// Place all the styles related to the Account controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.account-form{
+  textarea{
+    width: 310px;
+  }
+  input[type=text]{
+    width: 310px;
+  }
+  input[type=tel]{
+    width: 310px;
+  }
+}
+.account-form h2{
+  margin-bottom: 10px;
+}
+
+.pull-right{
+  .avatar{
+    margin: 43px 0px 10px 65px;
+    border:2px solid;
+    border-radius:7px;
+    }
+}
+ .pull-right{
+  .avatar, a{
+    margin-right: 10px;
+    }
+}
+.avatar_mini{
+  margin-top: 4px;
+}
+
+.account_show{
+  font-family: Verdana;
+  font-size:14px;
+  h2{ 
+    text-align: justify;
+    margin-left:9px;
+  }
+  img{
+    float:left;
+    border:2px solid;
+    border-radius:7px;
+  }
+  ul{
+    margin-left:10px;
+    list-style: none;
+    li{
+      display:block;
+      margin:10px 0px 10px 0px;
+      label{
+        width: 150px;
+        float: left;
+      }
+      ul.options{
+        margin-left: 0px;
+      }
+      span{
+        width: 300px;
+        list-style:none;
+        display:block;
+        margin-left:150px; 
+        text-align:justify
+      }
+    }
+  }
+  
+  fieldset{
+    display:inline;
+    margin-left:20px;
+  }
+}
+
+.account_index {
+    
+    img{
+      
+      text-align:center;
+      border:2px solid;
+      border-radius:7px;
+      margin-left:9px;
+    }
+    h4 a{ 
+      width: 120px;
+      height:40px;
+      list-style:none;
+      display:block;
+      text-align:center;
+      word-wrap: break-word;
+      overflow:hidden;
+      }
+    
+    border: 2px solid #E7E7E7;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 0 10px #000000;
+    float: left;    
+    margin: 0px  10px 10px 10px;
+    width: 120px;
+    height: 120px;
+}
+
+.my_pagination{
+      //margin-top:200px;
+      margin-left:8px;
+      clear:both;
+      
+    }
